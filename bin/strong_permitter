@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+# Exit cleanly from an early interrupt
+Signal.trap("INT") { exit 1 }
+
+require 'strong_permitter'
+require 'strong_permitter/cli'
+
+StrongPermitter::Cli.start(*ARGV)
