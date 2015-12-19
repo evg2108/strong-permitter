@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/strong-permitter.svg)](https://badge.fury.io/rb/strong-permitter)
+
 # StrongPermitter
 
 This gem allows move params permissions from controllers to separated permission-objects.
