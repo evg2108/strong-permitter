@@ -48,7 +48,7 @@ class ArticlesPermission < StrongPermitter::Permission::Base
     allowed_params_for :activate_article, :activation_status
     
     # also, you can set default resource name for this permission object (by default used controller name):
-    # resource_name = :blog
+    # self.resource_name = :blog
 end
 ```
 
