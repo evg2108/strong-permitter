@@ -2,7 +2,7 @@
 
 # StrongPermitter
 
-This gem allows move params permissions from controllers to separated permission-objects.
+This gem allows move params permissions from controllers to separated permission-objects. Used strong parameters whitelists.
 
 ## Installation
 
