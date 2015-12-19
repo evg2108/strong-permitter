@@ -46,6 +46,9 @@ class ArticlesPermission < StrongPermitter::Permission::Base
     # for non-standard actions permissions use:
     # allowed_params_for :action_name, :param1, :param2, ...
     allowed_params_for :activate_article, :activation_status
+    
+    # also, you can set default resource name for this permission object (by default used controller name):
+    # resource_name = :blog
 end
 ```
 
