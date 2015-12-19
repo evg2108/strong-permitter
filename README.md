@@ -7,7 +7,7 @@ This gem allows move params permissions from controllers to separated permission
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'strong-permitter', github: 'evg2108/strong-permitter', require: 'strong_permitter'
+gem 'strong-permitter'
 ```
 
 And then execute:
