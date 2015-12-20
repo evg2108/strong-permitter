@@ -52,6 +52,16 @@ class ArticlesPermission < StrongPermitter::Permission::Base
 end
 ```
 
+If you need use different resource names for different actions, you may set optional last argument `:resource` in `create_params`, `update_params` or `allowed_params_for` methods, like this:
+
+```Ruby
+class ArticlesPermission < StrongPermitter::Permission::Base
+    create_params :title, :description, :author_name, resource: :blog
+    update_params :title, :text, :blog_id, resource: :blog_post
+end
+```
+
+
 After that, you may use `permitted_params` method for your action methods:
 
 ```ruby
