@@ -3,7 +3,8 @@ module StrongPermitter
     class Base
       class << self
         def actions
-          @actions ||= HashWithIndifferentAccess.new { |hash,val| hash[val] = [] }
+
+          @actions ||= Hash.new { |hash,val| hash[val] = { permitted_params: [] } }
         end
 
         def create_params(*param_names_and_options)
@@ -20,10 +21,8 @@ module StrongPermitter
 
           resource_name = get_resource_name(options)
 
-          action_hash = { permitted_params: param_names }
-          action_hash[:resource] = resource_name if resource_name
-
-          actions[action_name] = action_hash
+          actions[action_name][:permitted_params] = param_names
+          actions[action_name][:resource] = resource_name if resource_name
         end
 
         def resource_name=(name)
@@ -38,10 +37,10 @@ module StrongPermitter
 
         def extract_options!(param_names_and_options)
           if param_names_and_options.last.is_a?(Hash)
-            if param_names_and_options[:resource]
-              options = param_names_and_options.keys.length == 1 ?
+            if param_names_and_options.last[:resource]
+              options = param_names_and_options.last.keys.length == 1 ?
                   param_names_and_options.pop :
-                  param_names_and_options.delete(:resource)
+                  param_names_and_options.last.delete(:resource)
             end
           end
           options || {}
