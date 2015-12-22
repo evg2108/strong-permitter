@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/evg2108/strong-permitter.svg?branch=optional_resource_name_and_tests)](https://travis-ci.org/evg2108/strong-permitter)
 [![Gem Version](https://badge.fury.io/rb/strong-permitter.svg)](https://badge.fury.io/rb/strong-permitter)
 
 # StrongPermitter
