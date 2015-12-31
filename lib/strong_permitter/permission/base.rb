@@ -3,7 +3,6 @@ module StrongPermitter
     class Base
       class << self
         def actions
-
           @actions ||= Hash.new { |hash,val| hash[val] = { permitted_params: [] } }
         end
 
